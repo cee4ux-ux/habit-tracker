@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: oklch(0.6 0.18 160);
+  --color-primary-light: oklch(0.8 0.1 160);
+  --color-bg: oklch(0.98 0.01 160);
+  --color-bg-card: oklch(1 0 0);
+  --color-bg-hover: oklch(0.95 0.01 160);
+  --color-text: oklch(0.2 0.02 160);
+  --color-text-secondary: oklch(0.5 0.02 160);
+  --color-border: oklch(0.9 0.01 160);
+  --color-danger: oklch(0.55 0.22 10);
+}
+
+[data-theme="dark"] {
+  --color-bg: oklch(0.15 0.02 160);
+  --color-bg-card: oklch(0.2 0.02 160);
+  --color-bg-hover: oklch(0.25 0.02 160);
+  --color-text: oklch(0.95 0.01 160);
+  --color-text-secondary: oklch(0.65 0.02 160);
+  --color-border: oklch(0.3 0.02 160);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
